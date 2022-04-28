@@ -1,0 +1,67 @@
+ID	Name	Description	X	Y	Connections	Cost
+1	Central Hall	Central Hall	437	250	"2,13,66,41"	2
+2	Main Vestibule	Main Vestibule	436	324	"1,3,48"	3
+3	Room 1	The Credit Suisse Exhibition: Raphael	401	354	"4,2"	4
+4	Room 2	The Credit Suisse Exhibition: Raphael	363	337	"3,5"	4
+5	Room 4	The Credit Suisse Exhibition: Raphael	326	335	"4,6,7"	3
+6	Room 5	The Credit Suisse Exhibition: Raphael	326	288	"5,12"	4
+7	Room 6	The Credit Suisse Exhibition: Raphael	291	336	"5,8"	4
+8	Room 7	The Credit Suisse Exhibition: Raphael	259	351	"7,9"	4
+9	Room 8	The Credit Suisse Exhibition: Raphael	227	323	"8,10"	4
+10	Room 9	Venice 1530-1600	230	248	"9,11,15,17,49"	1
+11	Room 10	The sacred and profane in sixteenth-century Italian art	284	254	"10,12"	4
+12	Room 11	Veronese's 'Four Allegories of Love'	327	251	"6,11,14,13"	2
+13	Room 12	Northern Italian Portraiture 1510-1580	367	251	"12,1"	4
+14	Room 14	The Netherlands	326	212	"12,31"	4
+15	Room 15	The Netherlands	240	175	"31,17,18,16,10"	1
+16	Room 15 Stairs	Stairs	228	142	"28,20,15"	3
+17	Room 16	"Cranach the Elder, Huber and Seisenegger"	204	189	"10,18,15"	3
+18	Room 17	"Altdofer, Rottenhammer, Wertinger"	205	160	"17,19,15"	3
+19	Room 17a	Room closed	209	143	"18,15"	2
+20	Room 18	Rubens	241	92	"21,26,23,24,16"	1
+21	Room 19	Dutch landscapes	198	121	"22,20"	4
+22	Room 20	A different view of Flanders	196	93	"21,23"	4
+23	Room 21	Van Dyck	196	63	"22,20"	4
+24	Room 22	Rembrandt	284	64	"20,25"	4
+25	Room 23	Dutch portraiture	284	93	"24,26"	4
+26	Room 24	International ambitions	284	120	"20,25,27"	3
+27	Room 25	A New Art For A New Nation (2)	328	119	"30,26"	4
+28	Room 26	"Brueghel the Elder, van der Heyden, van de Velde"	270	143	"16,29"	4
+29	Room 27	"de Hooch, Saenredam, Vermeer"	299	143	"28,30"	4
+30	Room 28	A New Art For A New Nation (1)	327	143	"27,31,29"	3
+31	Room 29	French Painting 1600-1700	326	173	"15,30,32,14"	2
+32	Room 30	Spain	435	172	"33,31,34,66"	2
+33	Room 31	Room closed	436	134	32	5
+34	Room 32	17th-century Italian paintings	544	164	"32,35,39"	3
+35	Room 33	"David, Fragonard and Vernet"	629	171	"34,36"	4
+36	Room 34	"Constable, Turner and Stubbs "	630	251	"35,37,43"	3
+37	Room 35	Hogarth and British Painting 	588	249	"36,38"	4
+38	Room 36	Claude and Turner	545	251	"39,40,37,42"	2
+39	Room 37	The Grand Tour	545	209	"34,38"	4
+40	Room 38	Canaletto and Guardi	499	250	"41,38"	4
+41	Room 39	"Canaletto, Pittoni and Tiepolo"	469	251	"1,40"	4
+42	Room 40	18th-century painting in Europe	544	288	"38,46"	4
+43	Room 41	"Cezanne, Monet, Renoir"	642	323	"36,44"	4
+44	Room 42	Room closed	613	359	"43,45"	4
+45	Room 43	"Gauguin, Seurat, Van Gogh"	583	349	"44,46"	4
+46	Room 44	"Cezanne, Degas, Monet"	541	349	"42,47,45"	3
+47	Room 45	"Constable, Corot and Ingres"	506	347	"2,46"	4
+48	Room 46	Gainsborough's Blue Boy	469	356	"2,47"	4
+49	Room 51	"Italy, 1250-1350"	93	237	"50,10,51,59"	2
+50	Room 51a	"Fra Angelico, friar-painter of San Domenico"	92	210	49	5
+51	Room 52	"Siena, 1300-1450"	101	275	"49,52"	4
+52	Room 53	"Florence and Beyond, 1400-1470"	102	301	"58,51,53"	3
+53	Room 54	Mantegna and Crivelli	102	331	"52,54"	4
+54	Room 55	"Venice and the Veneto, 1460-1510"	103	358	"53,55,56"	3
+55	Room 56	Venice after 1500	97	384	54	5
+56	Room 57	Ferrara and Bologna	61	369	"54,57,64"	3
+57	Room 58	Botticelli and Filippino Lippi	62	329	"56,58"	4
+58	Room 59	"Florence, 1460-1500"	61	289	"62,59,52,57"	2
+59	Room 60	Florentine Altarpieces about 1350-about 1460	62	236	"49,60,58"	3
+60	Room 61	"Central Italy, 1480-1520"	25	236	"59,61"	4
+61	Room 62	Cologne and north-western Germany	25	273	"60,62"	4
+62	Room 63	15th-century Netherlandish painting	25	306	"61,58,63"	3
+63	Room 64	Beyond the Netherlands	28	335	"62,64"	4
+64	Room 65	Southern Germany and Austria	29	359	"63,65,56"	3
+65	Room 66	Leonardo da Vinci at the National Gallery	32	379	64	5
+66	Sunley Room	kehinde Wiley at the National Gallery: The Prelude	381	213	"32,1"	4
