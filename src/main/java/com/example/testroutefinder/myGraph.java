@@ -10,8 +10,8 @@ public class myGraph<O> {
         nodes = new LinkedList<GraphNodeAL2<O>>();
     }
 
-    public LinkedList<GraphNodeAL2<O>> getNode() {
-        return new LinkedList<>(this.nodes);
+    public LinkedList<GraphNodeAL2<O>> getNodes() {
+        return new LinkedList<GraphNodeAL2<O>>(this.nodes);
     }
 
     //get nodes of type GraphNodeAL2
