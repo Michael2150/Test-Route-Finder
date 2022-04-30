@@ -68,12 +68,14 @@ public class HelloController implements Initializable {
 
         GraphNodeAL2<Exhibit> sourceNode = Globals.exhibitGraph.getNode(source);
 
-        CostedPath cpa = Dijkstra.findCheapestPathDijkstra(sourceNode, destination);
+        var res = Dijkstra.findCheapestPathDijkstra(sourceNode, destination);
+        var cost = Dijkstra.findPathCost(res, sourceNode);
 
-        for (GraphNodeAL2<?> n : cpa.pathList) {
-            System.out.println(n.data);
+        assert res != null;
+        for (var n : res) {
+            System.out.println(n);
         }
-        System.out.println("Total cost: " + cpa.pathCost);
+        System.out.println("Total cost: " + cost + "\n Path:" + res);
     }
 
     public void createPath(ArrayList<Integer> paths, int index) {
