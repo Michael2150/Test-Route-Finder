@@ -50,6 +50,7 @@ public class Dijkstra {
         return null; //No path found, so return null
     }
 
+    //Find the total cost of the path (sum of edge costs)
     public static <T> int findPathCost(LinkedList<T> path, GraphNodeAL2<T> startNode){
         if (path==null) return 0;
 
