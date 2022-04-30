@@ -22,4 +22,21 @@ public class Pixel  {
     public Pixel multiply(int i) {
         return new Pixel(x * i, y * i);
     }
+
+    //getters and setters
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
 }

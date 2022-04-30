@@ -13,8 +13,10 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class HelloController implements Initializable {
+    public ImageView overlayImage;
     @FXML
     private Pane imagePane;
     @FXML
@@ -41,7 +43,8 @@ public class HelloController implements Initializable {
         loadThread = new Thread(() -> {
             //start timer
             long startTime = System.currentTimeMillis();
-            ScanData.readInGraph(blueImage);
+            Globals.pixelGraph = ScanData.readInGraph(blueImage);
+            System.out.println(Globals.pixelGraph.getNodes());
             for (Exhibit e : Globals.exhibits) {
                 e.setPosition(Globals.getNearestPixel(Globals.pixelGraph, e.getPosition()));
             }
@@ -51,7 +54,6 @@ public class HelloController implements Initializable {
             System.out.println("Time taken: " + (endTime - startTime) + "ms");
         });
         loadThread.start();
-
         fillComboBoxes();
     }
 
@@ -65,12 +67,15 @@ public class HelloController implements Initializable {
     private void runDijkstra(MouseEvent mouseEvent) {
         Exhibit source = sourceBox.getSelectionModel().getSelectedItem();
         Exhibit destination =  destinationBox.getSelectionModel().getSelectedItem();
+        LinkedList<Exhibit> exhibitList = new LinkedList<>();
 
         GraphNodeAL2<Exhibit> sourceNode = Globals.exhibitGraph.getNode(source);
 
         var res = Dijkstra.findCheapestPathDijkstra(sourceNode, destination);
+        exhibitList.addAll(res);
         var cost = Dijkstra.findPathCost(res, sourceNode);
 
+        loadPath(exhibitList);
         assert res != null;
         for (var n : res) {
             System.out.println(n);
@@ -78,26 +83,10 @@ public class HelloController implements Initializable {
         System.out.println("Total cost: " + cost + "\n Path:" + res);
     }
 
-    public void createPath(ArrayList<Integer> paths, int index) {
-        Paint paint;
-        if (index == 0) {
-            paint = Color.RED;
-        } else if (index == 1) {
-            paint = Color.GREEN;
-        } else {
-            paint = Color.BLUE;
-        }
-        for (int path : paths) {
-            double x = path % image.getImage().getWidth();
-            double y = path / image.getImage().getWidth() + 1;
-
-            Circle circle = new Circle();
-            circle.setLayoutX(x);
-            circle.setLayoutY(y);
-            circle.setRadius(1);
-            circle.setFill(paint);
-            imagePane.getChildren().add(circle);
-        }
+    public void loadPath(LinkedList<Exhibit> exhibits) {
+        var pixels = Utils.getPixelsBetween(Globals.pixelGraph, exhibits);
+        var imagePath = Utils.createPath((int) image.getFitWidth(), (int) image.getFitHeight(), pixels);
+        overlayImage.setImage(imagePath);
     }
 
 }
