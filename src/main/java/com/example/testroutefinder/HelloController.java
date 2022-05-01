@@ -44,11 +44,10 @@ public class HelloController implements Initializable {
             //start timer
             long startTime = System.currentTimeMillis();
             Globals.pixelGraph = ScanData.readInGraph(blueImage);
-            System.out.println(Globals.pixelGraph.getNodes());
             for (Exhibit e : Globals.exhibits) {
                 e.setPosition(Globals.getNearestPixel(Globals.pixelGraph, e.getPosition()));
             }
-            System.out.println("Graph loaded");
+            System.out.println("Graph loaded " + Globals.pixelGraph.getNodes().size());
             //print time taken
             long endTime = System.currentTimeMillis();
             System.out.println("Time taken: " + (endTime - startTime) + "ms");
@@ -65,28 +64,28 @@ public class HelloController implements Initializable {
 
     @FXML
     private void runDijkstra(MouseEvent mouseEvent) {
-        Exhibit source = sourceBox.getSelectionModel().getSelectedItem();
-        Exhibit destination =  destinationBox.getSelectionModel().getSelectedItem();
-        LinkedList<Exhibit> exhibitList = new LinkedList<>();
+        Exhibit source = sourceBox.getSelectionModel().getSelectedItem(); //get the source
+        Exhibit destination =  destinationBox.getSelectionModel().getSelectedItem(); //get the destination
+        LinkedList<Exhibit> exhibitList = new LinkedList<>(); //create a list to store the path
 
-        GraphNodeAL2<Exhibit> sourceNode = Globals.exhibitGraph.getNode(source);
+        GraphNodeAL2<Exhibit> sourceNode = Globals.exhibitGraph.getNode(source); //get the source node
 
-        var res = Dijkstra.findCheapestPathDijkstra(sourceNode, destination);
-        exhibitList.addAll(res);
-        var cost = Dijkstra.findPathCost(res, sourceNode);
+        var res = Dijkstra.findCheapestPathDijkstra(sourceNode, destination); //find the cheapest path
+        exhibitList.addAll(res); //add the path to the list
+        var cost = Dijkstra.findPathCost(res, sourceNode); //find the cost of the path
 
-        loadPath(exhibitList);
+        loadPath(exhibitList); //load the path
         assert res != null;
-        for (var n : res) {
+        for (var n : res) { //for each node in the path
             System.out.println(n);
         }
-        System.out.println("Total cost: " + cost + "\n Path:" + res);
+        System.out.println("Total cost: " + cost + "\n Path:" + res); //print the cost and path
     }
 
-    public void loadPath(LinkedList<Exhibit> exhibits) {
-        var pixels = Utils.getPixelsBetween(Globals.pixelGraph, exhibits);
-        var imagePath = Utils.createPath((int) image.getFitWidth(), (int) image.getFitHeight(), pixels);
-        overlayImage.setImage(imagePath);
+    public void loadPath(LinkedList<Exhibit> exhibits) { //load the path
+        var pixels = Utils.getPixelsBetween(Globals.pixelGraph, exhibits); //get the pixels between the path
+        var imagePath = Utils.createPath((int) image.getFitWidth(), (int) image.getFitHeight(), pixels); //create the image of the path
+        overlayImage.setImage(imagePath); //set the image of the path to the overlay image
     }
 
 }

@@ -32,10 +32,11 @@ public class Utils {
         WritableImage image = new WritableImage(width, height);
         PixelWriter pixelWriter = image.getPixelWriter();
 
+
         for (var pxls : pixels){
             Color color = new Color(1, 0, 0, 1);
             for (var pxl : pxls){
-                var radius = 1;
+                var radius = 5;
                 for (int x = -radius; x <= radius; x++){
                     for (int y = -radius; y <= radius; y++){
                         if (pxl.getX() + x >= 0 && pxl.getX() + x < width && pxl.getY() + y >= 0 && pxl.getY() + y < height){
