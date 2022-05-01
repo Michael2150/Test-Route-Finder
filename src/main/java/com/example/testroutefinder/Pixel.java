@@ -39,4 +39,9 @@ public class Pixel  {
     public void setY(double y) {
         this.y = y;
     }
+
+    @Override
+    public String toString() {
+        return "Point2D [x = " + this.getX() + ", y = " + this.getY() + "]";
+    }
 }

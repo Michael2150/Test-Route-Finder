@@ -31,9 +31,9 @@ public class BFS {
             for(var adjacent : current.adjList){ // for each adjacent node
                 var adjacentNode = adjacent.destNode; // get the adjacent node
                 if(!visited.get(adjacentNode)){ // if the adjacent node is not visited
-                    visited.put((GraphNodeAL2<O>) adjacentNode, true); // set the adjacent node to visited
-                    previous.put((GraphNodeAL2<O>) adjacentNode, current); // set the previous node to the current node
-                    queue.add((GraphNodeAL2<O>) adjacentNode); // add the adjacent node to the queue
+                    visited.put(adjacentNode, true); // set the adjacent node to visited
+                    previous.put(adjacentNode, current); // set the previous node to the current node
+                    queue.add(adjacentNode); // add the adjacent node to the queue
                 }
             }
         }

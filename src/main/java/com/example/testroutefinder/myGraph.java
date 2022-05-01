@@ -25,7 +25,11 @@ public class myGraph<O> {
     }
 
     public boolean addNode(O data){
-        nodes.add(new GraphNodeAL2<O>(data));
+        var n = new GraphNodeAL2<O>(data);
+        if (nodes.contains(n))
+            return false;
+
+        nodes.add(n);
         return true;
     }
 
@@ -37,6 +41,7 @@ public class myGraph<O> {
         GraphNodeAL2<O> sourceNode = getNode(source);
         GraphNodeAL2<O> destinationNode = getNode(destination);
         sourceNode.connectToNodeUndirected(destinationNode, cost);
+        destinationNode.connectToNodeUndirected(sourceNode, cost);
         return true;
     }
 

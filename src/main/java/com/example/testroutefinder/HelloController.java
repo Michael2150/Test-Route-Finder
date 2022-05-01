@@ -8,11 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Circle;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class HelloController implements Initializable {
@@ -51,6 +47,17 @@ public class HelloController implements Initializable {
             //print time taken
             long endTime = System.currentTimeMillis();
             System.out.println("Time taken: " + (endTime - startTime) + "ms");
+
+            //DEBUG CODE
+            //Print the pixel and its neighbors in one line
+            Globals.pixelGraph.getNodes().forEach(node -> {
+                var s = node.getData() + ": [" + node.adjList.size() + "] ";
+                for (var n : node.adjList) {
+                    s += n.destNode.getData() + " ";
+                }
+                System.out.println(s);
+            });
+
         });
         loadThread.start();
         fillComboBoxes();
